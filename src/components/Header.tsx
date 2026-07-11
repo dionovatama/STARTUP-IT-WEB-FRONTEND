@@ -16,9 +16,9 @@ export default function Header({ activeView, onViewChange }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Solutions (Indo Catalog)', view: 'katalog' as ActiveView },
-    { label: 'Global Platform', view: 'solutions' as ActiveView },
-    { label: 'Developers & Portfolio', view: 'developers' as ActiveView },
+    { label: 'Katalog', view: 'katalog' as ActiveView },
+    { label: 'Home', view: 'solutions' as ActiveView },
+    { label: 'Portofolio', view: 'developers' as ActiveView },
   ];
 
   return (
@@ -44,7 +44,7 @@ export default function Header({ activeView, onViewChange }: HeaderProps) {
             }`}
             id="nav-katalog"
           >
-            Solutions (Indo)
+            Katalog
           </button>
           
           <button 
@@ -56,7 +56,7 @@ export default function Header({ activeView, onViewChange }: HeaderProps) {
             }`}
             id="nav-solutions"
           >
-            Global Stack
+            Home
           </button>
 
           <button 
@@ -68,7 +68,7 @@ export default function Header({ activeView, onViewChange }: HeaderProps) {
             }`}
             id="nav-developers"
           >
-            Developers & Portfolio
+            Portofolio
           </button>
         </div>
 

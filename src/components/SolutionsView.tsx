@@ -7,6 +7,34 @@ import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
 import { ActiveView } from '../types';
 import { GLOBAL_PLANS, PORTFOLIO_PROJECTS, IMAGES } from '../data';
+import HeroCarousel, { CarouselItem } from './HeroCarousel';
+
+const carouselItems: CarouselItem[] = [
+  {
+    src: IMAGES.orbitSync,
+    alt: 'Orbit Sync Data Center Recovery',
+    title: 'Orbit Sync',
+    description: 'Real-time datacenter status and high-availability server cluster recovery.'
+  },
+  {
+    src: IMAGES.scalableArch,
+    alt: 'Scalable Infrastructure Architecture',
+    title: 'Scalable Infrastructure',
+    description: 'Modular fiber routing, smart power grids, and low-latency edge deployment.'
+  },
+  {
+    src: IMAGES.neoEdgeMesh,
+    alt: 'Neo-Edge Mesh Collaborative Development',
+    title: 'Neo-Edge Mesh',
+    description: '3D container orchestration pipelines and collaborative live-system monitors.'
+  },
+  {
+    src: IMAGES.hero3D,
+    alt: 'Cloud Infrastructure Developer Hub',
+    title: 'Developer Hub Console',
+    description: 'Highly responsive monitoring tools, custom dashboards, and performance tuning.'
+  }
+];
 import { 
   Bolt, 
   ArrowRight, 
@@ -104,20 +132,9 @@ export default function SolutionsView({ onViewChange }: SolutionsViewProps) {
             </div>
           </div>
 
-          {/* Isometric cloud center illustration */}
-          <div className="relative hidden md:block">
-            <div className="w-full aspect-square rounded-2xl glass-panel p-8 flex items-center justify-center relative border border-white/10 overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/12 to-transparent opacity-50 blur-3xl"></div>
-              
-              <motion.img 
-                initial={{ scale: 0.95, opacity: 0.8 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
-                className="w-full h-full object-contain drop-shadow-2xl z-10 select-none pointer-events-none" 
-                src={IMAGES.hero3D} 
-                alt="3D cloud infrastructure hub showing server stacks and dynamic visualization pipelines." 
-              />
-            </div>
+          {/* Auto-swiping portfolio image carousel */}
+          <div className="relative w-full mt-10 md:mt-0 max-w-lg md:max-w-none mx-auto">
+            <HeroCarousel items={carouselItems} />
           </div>
         </div>
       </section>
